@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VERA COSMIQUE - LUXE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF8F5;--paper:#fff;--black:#141414;--gold:#B89B5E;--gold-light:#E8DDC5;--sage:#8A9A8E;--border:#EAE6E0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--black)}
+.top-bar{background:var(--black);color:var(--gold-light);text-align:center;padding:8px;font-size:9.5px;letter-spacing:3px;position:fixed;top:0;width:100%;z-index:1002}
+header{position:fixed;top:28px;width:100%;z-index:1001;background:rgba(250,248,245,0.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center}
+.header-top{width:100%;display:flex;justify-content:space-between;align-items:center;padding:0 20px}
+.logo{font-family:'Playfair Display';font-weight:800;line-height:0.82;font-size:23px;color:var(--black);letter-spacing:1px}
+.logo small{display:block;font-size:8.5px;letter-spacing:4px;color:var(--gold);font-weight:700;margin-top:5px;font-family:'Poppins'}
+.btn-wa{background:var(--black);color:var(--bg);padding:11px 22px;border-radius:100px;text-decoration:none;font-weight:700;font-size:12px}
+.search-wrapper{position:fixed;top:92px;width:100%;z-index:1000;background:rgba(250,248,245,0.95);backdrop-filter:blur(12px);padding:10px 20px;border-bottom:1px solid var(--border)}
+.search{display:flex;background:var(--paper);border:1px solid var(--border);border-radius:100px;padding:11px 18px}
+.search input{flex:1;border:none;outline:none;font-size:13px;background:transparent}
+.hero{padding:160px 20px 40px;text-align:center}
+.hero-label{display:inline-block;background:var(--black);color:var(--gold-light);padding:6px 14px;border-radius:100px;font-size:9px;letter-spacing:2px;font-weight:700;margin-bottom:18px}
+.hero h1{font-family:'Playfair Display';font-weight:800;line-height:0.9;max-width:360px;margin:0 auto}.hero h1 .l1{font-size:40px;display:block}.hero h1 .l2,.hero h1 .l3{font-size:34px;color:var(--gold);font-style:italic;font-weight:500}
+.hero-img-wrap{position:relative;margin:28px auto 0;max-width:380px}.hero-img-wrap img{width:100%;border-radius:32px;box-shadow:0 30px 60px rgba(0,0,0,0.12)}
+.badge-float{position:absolute;bottom:-10px;right:-6px;background:white;padding:10px 14px;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,0.1);font-size:11px;font-weight:700;border:1px solid var(--border)}
+.container{max-width:520px;margin:0 auto;padding:24px 16px;background:var(--paper)}
+.card{border:1px solid var(--border);border-radius:26px;padding:18px;margin:22px 0;background:white;text-align:center}
+.card img{width:100%;border-radius:18px;background:#FCFBF9}.card h3{font-family:'Playfair Display';font-size:18px;margin:12px 0 4px}.desc{color:var(--sage);font-size:12px}
+.prix{font-size:34px;font-weight:800;font-family:'Playfair Display';margin:12px 0}.prix small{font-size:13px;color:var(--gold)}
+.btn-card{display:block;padding:14px;border-radius:100px;text-decoration:none;font-weight:800;color:white;margin-top:12px;font-size:12px;background:var(--black)}
+.pay-box{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--border);border-radius:16px;padding:14px;margin:10px 0;background:white}.pay-box img{width:48px;height:34px;object-fit:contain}
+.cta{background:var(--black);color:white;text-align:center;padding:40px 20px}.wa-big{background:white;color:var(--black);padding:16px 34px;border-radius:100px;text-decoration:none;font-weight:900;display:inline-block;margin:14px 0}
+.btn-wa, .wa-big, #ai-btn{animation:fastPulse 0.7s infinite !important}
+@keyframes fastPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.9);transform:scale(1)}50%{box-shadow:0 0 0 16px rgba(37,211,102,0);transform:scale(1.08)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);transform:scale(1)}}
+#ai-btn{position:fixed;bottom:20px;left:16px;z-index:9999;background:var(--black);color:var(--gold-light);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;border:1.5px solid var(--gold);cursor:pointer}
+#ai-box{position:fixed;bottom:85px;left:16px;right:16px;max-width:360px;z-index:9999;background:white;border-radius:22px;box-shadow:0 25px 60px rgba(0,0,0,0.22);overflow:hidden;display:none;border:1px solid var(--border)}
+</style>
+</head>
+<body>
+<div class="top-bar">LIVRAISON GRATUITE DÈS 350 MRU</div>
+<header><div class="header-top"><div class="logo">VERA<br>COSMIQUE<br><small>ALOE VERA • LUXE</small></div><a href="https://wa.me/22241176023" class="btn-wa">41176023</a></div></header>
+<div class="search-wrapper"><div class="search"><input id="q" placeholder="Rechercher 100ml, 250ml, 500ml" onkeyup="search()"><button style="background:none;border:none">🔍</button></div></div>
+
+<div class="hero"><div class="hero-label">ÉDITION LUXE</div><h1><span class="l1">VERA COSMIQUE</span><span class="l2">ALOE VERA</span><span class="l3">SERUM</span></h1><p style="color:var(--sage);margin-top:12px;letter-spacing:2px;font-size:10px;font-weight:600">100% NATUREL • NOURISH & REPAIR</p><div class="hero-img-wrap"><img src="vera_hero.jpg"><div class="badge-float">⭐ 4.9/5<br><b>1200+ clientes</b></div></div></div>
+
+<div class="container">
+<div class="card" data-cat="100ml"><img src="vera_dropper.jpg"><h3>100ml - Découverte</h3><div class="desc">SÉRUM PRÉCIEUX 100ML</div><div class="prix">100 <small>MRU</small></div><a href="https://wa.me/22241176023?text=100ml" class="btn-card">COMMANDER</a></div>
+<div class="card" data-cat="250ml" style="border:1.5px solid var(--black)"><div style="position:absolute;margin:-28px 0 0 220px;background:var(--black);color:var(--gold-light);padding:6px 14px;border-radius:100px;font-size:10px">BEST SELLER</div><img src="vera_hero.jpg"><h3>250ml - Le Précieux</h3><div class="desc">BEST - Nourish & Repair</div><div class="prix">150 <small>MRU</small></div><a href="https://wa.me/22241176023?text=250ml" class="btn-card">COMMANDER</a></div>
+<div class="card" data-cat="500ml" style="border:1.5px solid var(--gold-light)"><img src="vera500.jpg"><h3>500ml - Famille Luxe</h3><div class="desc">FORMAT FAMILLE 500ML</div><div class="prix">200 <small>MRU</small></div><a href="https://wa.me/22241176023?text=500ml" class="btn-card" style="background:var(--gold);color:var(--black)">COMMANDER OR</a></div>
+
+<div class="pay-box"><div style="display:flex;gap:10px;align-items:center;font-weight:700"><img src="sedad.jpg">Sedad</div><div>36406634</div></div>
+<div class="pay-box"><div style="display:flex;gap:10px;align-items:center;font-weight:700"><img src="bankily.jpg">Bankily</div><div>41176023</div></div>
+<div class="pay-box"><div style="display:flex;gap:10px;align-items:center;font-weight:700"><img src="masrvi.jpg">Masrvi</div><div>41176023</div></div>
+</div>
+
+<div class="cta"><h2 style="font-family:'Playfair Display';font-size:26px">Commande Luxe</h2><a href="https://wa.me/22241176023" class="wa-big">💬 WhatsApp: 41176023</a></div>
+
+<div id="ai-btn" onclick="toggleAI()">✦</div>
+<div id="ai-box"><div style="background:var(--black);color:var(--gold-light);padding:12px 16px;display:flex;justify-content:space-between;font-weight:700"><span>VERA IA • Assistante Luxe</span><span onclick="toggleAI()" style="cursor:pointer">✕</span></div><div id="ai-messages" style="height:260px;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:var(--bg)"><div style="background:white;border:1px solid var(--border);padding:10px;border-radius:14px;font-size:13px">Salam ! Assistante VERA 🌿<br>Je connais tout sur Prix, Livraison, Paiement, Composition.</div></div>
+<div style="display:flex;gap:6px;overflow:auto;padding:10px 14px;background:white;border-top:1px solid var(--border)"><span onclick="ask('Prix')" style="background:var(--bg);padding:7px 14px;border-radius:100px;font-size:11px;cursor:pointer;border:1px solid var(--border)">💰 Prix</span><span onclick="ask('Livraison')" style="background:var(--bg);padding:7px 14px;border-radius:100px;font-size:11px;cursor:pointer;border:1px solid var(--border)">🚚 Livraison</span><span onclick="ask('Comment utiliser')" style="background:var(--bg);padding:7px 14px;border-radius:100px;font-size:11px;cursor:pointer;border:1px solid var(--border)">✨ Utilisation</span></div>
+<div style="display:flex;padding:8px;border-top:1px solid var(--border)"><input id="aiText" placeholder="Question..." style="flex:1;border:none;outline:none;padding:8px"><button onclick="sendAI()" style="background:var(--black);color:white;border:none;padding:8px 14px;border-radius:20px">OK</button></div></div>
+
+<script>
+function search(){let q=document.getElementById('q').value.toLowerCase();document.querySelectorAll('.card').forEach(c=>{c.style.display=c.innerText.toLowerCase().includes(q)?'block':'none'})}
+function toggleAI(){let b=document.getElementById('ai-box');b.style.display=b.style.display==='block'?'none':'block'}
+function getReponse(q){
+ q=q.toLowerCase();
+ if(q.includes('prix') || q.includes('combien') || q.includes('coute')){return "💰 <b>Prix VERA LUXE :</b><br>• 100ml = 100 MRU<br>• 250ml = 150 MRU ⭐ BEST<br>• 500ml = 200 MRU<br>• Pack 3x250ml = 350 MRU au lieu de 450 (livraison gratuite)"}
+ if(q.includes('livraison') || q.includes('nktt') || q.includes('nouakchott')){return "🚚 <b>Livraison Nouakchott :</b><br>• Jour même<br>• 100 MRU<br>• GRATUITE dès 350 MRU<br>Tevragh Zeina, Ksar, Dar Naim, Arafat... Ton quartier ?"}
+ if(q.includes('paiement') || q.includes('sedad') || q.includes('bankily') || q.includes('masrvi')){return "💳 <b>Paiement :</b><br>• Sedad : 36406634<br>• Bankily : 41176023<br>• Masrvi : 41176023<br>Paiement à la livraison possible aussi"}
+ if(q.includes('compos') || q.includes('naturel') || q.includes('aloe')){return "🌿 <b>100% Naturel :</b><br>Aloe Vera pure pressée à froid. Sans silicone, sans parabène. Hydrate, répare pointes sèches, brillance."}
+ if(q.includes('utilis') || q.includes('comment') || q.includes('applique')){return "✨ <b>Utilisation :</b><br>1. Quelques gouttes cheveux humides<br>2. Masse cuir chevelu + pointes<br>3. 3x/semaine<br>Résultat soyeux dès 1 semaine"}
+ if(q.includes('cheveu') || q.includes('sec') || q.includes('chute') || q.includes('pousse')){return "💆‍♀️ <b>Pour cheveux secs/chute :</b><br>VERA répare, stoppe chute, accélère pousse. 250ml le + demandé pour ça. Tu veux commander ?"}
+ if(q.includes('pack') || q.includes('offre')){return "📦 <b>PACKS :</b><br>• 3x100ml = 250 MRU<br>• 3x250ml = 350 MRU ⭐<br>• 2x500ml = 300 MRU<br>Livraison gratuite !"}
+ return "Salam ! Je connais tout sur :<br>• Prix / Packs<br>• Livraison NKTT<br>• Paiement<br>• Composition / Utilisation<br>Pose ta question !";
+}
+function ask(t){document.getElementById('aiText').value=t;sendAI()}
+function sendAI(){
+ let i=document.getElementById('aiText');let t=i.value.trim();if(!t)return;
+ let box=document.getElementById('ai-messages');
+ box.innerHTML+=`<div style="background:var(--black);color:white;padding:10px 14px;border-radius:18px;max-width:80%;align-self:flex-end;font-size:13px;margin-left:auto">${t}</div>`;
+ i.value='';
+ let rep=getReponse(t);
+ setTimeout(()=>{
+   box.innerHTML+=`<div style="background:white;border:1px solid var(--border);padding:12px 14px;border-radius:18px;font-size:13px;line-height:1.6">${rep}<br><br><a href="https://wa.me/22241176023?text=${encodeURIComponent(t)}" style="background:#25D366;color:white;padding:8px 16px;border-radius:100px;text-decoration:none;font-size:11px;font-weight:700;display:inline-block">Commander WhatsApp 📲</a></div>`;
+   box.scrollTop=box.scrollHeight;
+ },400);
+ box.scrollTop=box.scrollHeight;
+}
+</script>
+</body>
+  </html>
