@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VERA COSMIQUE - LUXE Aloe Vera</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:#fdfcf7;color:#1a2e1a;overflow-x:hidden}
+header{position:fixed;top:0;width:100%;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(20,69,42,0.08);transition:0.4s}
+.logo{font-family:'Playfair Display',serif;font-weight:900;color:#0f2e1c;line-height:0.9;font-size:20px;letter-spacing:2px}
+.logo small{font-family:'Poppins';font-size:10px;letter-spacing:4px;color:#c9a227;font-weight:600}
+.search{flex:1;margin:0 14px;display:flex;align-items:center;background:rgba(20,69,42,0.06);border-radius:30px;padding:8px 14px;transition:0.3s}
+.search:focus-within{background:white;box-shadow:0 4px 15px rgba(20,69,42,0.12);border:1px solid #d6e9d6}
+.search input{flex:1;border:none;background:transparent;outline:none;font-size:13px;font-family:'Poppins'}
+.btn-top{background:#0f2e1c;color:#d4c06a;padding:10px 20px;border-radius:30px;text-decoration:none;font-weight:800;font-size:13px;letter-spacing:1px;transition:0.3s}
+.btn-top:hover{background:#c9a227;color:#0f2e1c;transform:scale(1.05)}
+.hero{height:95vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;background:radial-gradient(circle at top,#eef5ee,#fdfcf7);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(201,162,39,0.12),transparent);top:-100px;right:-100px;border-radius:50%;animation:float 6s infinite ease-in-out}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(20px)}}
+.hero h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:#0f2e1c;line-height:0.95;margin-top:60px;animation:fadeUp 1s ease}
+.hero h1 span{color:#c9a227;display:block;font-size:38px;font-style:italic}
+.hero p{color:#6b8a6b;margin:14px 0;letter-spacing:3px;font-size:12px;font-weight:600;animation:fadeUp 1s 0.2s both}
+.hero img{width:90%;max-width:380px;border-radius:30px;box-shadow:0 30px 60px rgba(20,69,42,0.18);margin:20px 0;transform:rotate(-2deg);transition:0.6s;animation:fadeUp 1s 0.4s both}
+.hero img:hover{transform:rotate(0deg) scale(1.02)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.filters{position:sticky;top:62px;z-index:999;display:flex;gap:10px;padding:14px 18px;overflow:auto;background:rgba(253,252,247,0.9);backdrop-filter:blur(10px);border-bottom:1px solid #eee}
+.f{border:1px solid #e0e8d6;padding:8px 18px;border-radius:30px;font-size:12px;white-space:nowrap;background:white;cursor:pointer;font-weight:600;transition:0.3s;color:#0f2e1c}
+.f.active,.f:hover{background:#0f2e1c;color:#d4c06a;border-color:#0f2e1c;transform:translateY(-2px);box-shadow:0 5px 15px rgba(15,46,28,0.2)}
+.container{max-width:520px;margin:0 auto;padding:30px 16px;background:white}
+.title{font-family:'Playfair Display';text-align:center;font-size:32px;color:#0f2e1c;margin:10px 0 5px}
+.subtitle{text-align:center;color:#8aa88a;font-size:12px;letter-spacing:2px;margin-bottom:25px}
+.card{border:1px solid #eef2e8;border-radius:26px;padding:18px;margin:22px 0;background:white;text-align:center;overflow:hidden;transition:0.5s cubic-bezier(0.2,0.8,0.2,1);box-shadow:0 10px 30px rgba(0,0,0,0.04)}
+.card:hover{transform:translateY(-8px);box-shadow:0 25px 50px rgba(20,69,42,0.15);border-color:#d4c06a}
+.card img{width:100%;border-radius:18px;object-fit:contain;background:linear-gradient(#fcfdfc,#f5f9f5);max-height:440px;transition:0.5s}
+.card:hover img{transform:scale(1.03)}
+.card h3{font-family:'Playfair Display';font-size:20px;margin:14px 0 4px;color:#0f2e1c}
+.desc{color:#8aa88a;font-size:12px;line-height:1.5}
+.prix{font-size:38px;font-weight:900;color:#0f2e1c;margin:12px 0;font-family:'Playfair Display'}
+.prix small{font-family:'Poppins';font-size:14px;color:#c9a227}
+.btn-card{display:block;padding:15px;border-radius:30px;text-decoration:none;font-weight:800;color:white;margin-top:12px;font-size:14px;letter-spacing:1px;transition:0.3s;position:relative;overflow:hidden}
+.btn-card::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);transition:0.5s}
+.btn-card:hover::before{left:100%}
+.btn-card:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(0,0,0,0.15)}
+.best{border:2px solid #0f2e1c;background:linear-gradient(#f8fdf8,#f0f7f0);position:relative;margin-top:35px}
+.badge{position:absolute;top:-14px;right:20px;background:#0f2e1c;color:#d4c06a;padding:7px 16px;border-radius:30px;font-size:11px;font-weight:900;letter-spacing:1px;box-shadow:0 5px 15px rgba(0,0,0,0.15)}
+.gold{border:2px solid #d4c06a;background:linear-gradient(#fffdf0,#fff9e0)}
+.similar{background:linear-gradient(#f8fdf8,#ffffff);border:1px dashed #c9e2c9;border-radius:18px;padding:16px;margin:18px 0;text-align:left}
+.similar-grid{display:flex;gap:10px;overflow:auto;margin-top:10px;scroll-snap-type:x mandatory}
+.similar-grid img{width:90px;height:90px;border-radius:14px;object-fit:contain;background:white;border:1px solid #eee;scroll-snap-align:start;transition:0.3s}
+.similar-grid img:hover{transform:scale(1.1);border-color:#c9a227}
+.panier-bar{background:linear-gradient(white,#fdfcf7);border:1px solid #e8e0c0;border-radius:20px;padding:18px;margin:25px 0;box-shadow:0 10px 25px rgba(0,0,0,0.04)}
+.progress{height:8px;background:#e8e0c0;border-radius:10px;overflow:hidden;margin:12px 0}
+.progress span{display:block;width:60%;height:100%;background:linear-gradient(90deg,#0f2e1c,#c9a227);border-radius:10px;animation:load 2s ease}
+@keyframes load{from{width:0}to{width:60%}}
+.pack-section{background:radial-gradient(circle at top,#1a3d26,#0f2e1c);border-radius:26px;padding:22px;margin:35px 0;color:white;text-align:center;box-shadow:0 20px 40px rgba(15,46,28,0.25)}
+.pack-section h2{font-family:'Playfair Display';color:#d4c06a;margin-bottom:16px;font-size:24px}
+.pack{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.07);backdrop-filter:blur(5px);padding:14px 16px;border-radius:14px;margin:12px 0;border:1px solid rgba(212,192,106,0.15);transition:0.3s}
+.pack:hover{background:rgba(255,255,255,0.12);transform:translateX(5px)}
+.insta{padding:30px 16px;text-align:center;background:linear-gradient(#ffffff,#fdfcf7);border-top:1px solid #f0e8d6}
+.insta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px auto;max-width:400px}
+.insta-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:18px;transition:0.4s;filter:brightness(0.95)}
+.insta-grid img:hover{transform:scale(1.05) rotate(1deg);filter:brightness(1.1);box-shadow:0 10px 20px rgba(0,0,0,0.15)}
+.pay-box{display:flex;justify-content:space-between;align-items:center;border:1px solid #e9e5d0;border-radius:16px;padding:14px 16px;margin:12px 0;background:white;transition:0.3s}
+.pay-box:hover{border-color:#c9a227;transform:translateY(-2px)}
+.cta{background:radial-gradient(circle at center,#0f2e1c,#0a1f14);color:white;text-align:center;padding:40px 20px}
+.wa-big{background:linear-gradient(135deg,#25D366,#1faa52);color:white;padding:18px 36px;border-radius:50px;text-decoration:none;font-weight:900;display:inline-block;margin:14px 0;font-size:17px;box-shadow:0 10px 25px rgba(37,211,102,0.3);transition:0.3s}
+.wa-big:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 15px 35px rgba(37,211,102,0.4)}
+.reveal{opacity:0;transform:translateY(30px);transition:0.8s cubic-bezier(0.2,0.8,0.2,1)}
+.reveal.active{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">VERA<br>COSMIQUE<br><small>ALOE VERA • LUXE</small></div>
+<div class="search"><input id="q" placeholder="Chercher 250ml..." onkeyup="search()"><button>🔍</button></div>
+<a href="https://wa.me/22241176023" class="btn-top">41176023</a>
+</header>
+
+<div class="hero">
+<h1>VERA COSMIQUE<span>ALOE VERA SERUM</span></h1>
+<p>100% NATUREL • NOURISH & REPAIR • LUXE</p>
+<img src="vera_hero.jpg">
+<p style="color:#0f2e1c;font-weight:700;letter-spacing:1px">250ml • 8.45 fl oz & 100ml • 3.38 fl oz - Sérum Cheveux</p>
+</div>
+
+<div class="filters">
+<div class="f active" onclick="filterCat('all',this)">Tous</div>
+<div class="f" onclick="filterCat('100ml',this)">100ml</div>
+<div class="f" onclick="filterCat('250ml',this)">250ml</div>
+<div class="f" onclick="filterCat('500ml',this)">500ml</div>
+<div class="f" onclick="filterCat('pack',this)">Pack Luxe</div>
+</div>
+
+<div class="container">
+<div class="title">Collection Luxe</div>
+<div class="subtitle">HUILE NATURELLE • HYDRATANT & NOURRISSANT</div>
+
+<div class="card reveal" data-cat="pack"><img src="vera_trio.jpg"><h3>Collection Complète Luxe</h3><div class="desc">3 Formats Transparents - Rituel Complet</div><div style="font-size:13px;color:#0f2e1c;font-weight:700;margin-top:10px;letter-spacing:1px">100ml • 250ml • 500ml - ÉDITION LUXE</div></div>
+
+<div class="card reveal" data-cat="100ml"><img src="vera_dropper.jpg"><h3>100ml - Élixir Découverte</h3><div class="desc">ALOE VERA SERUM - SÉRUM CAPILLAIRE PRÉCIEUX<br>100ML / 3.38 FL OZ - LUXE NATUREL</div><div class="prix">100 <small>MRU</small></div><a href="https://wa.me/22241176023?text=Salam%20Vera%20Luxe%20100ml" class="btn-card" style="background:#0f2e1c">COMMANDER - LUXE</a></div>
+
+<div class="card best reveal" data-cat="250ml"><div class="badge">⭐ BEST SELLER LUXE</div><img src="vera_hero.jpg"><h3>250ml - Le Précieux</h3><div class="desc">Le Plus Vendu - Nourish & Repair - Finition Soie</div><div class="prix">150 <small>MRU</small></div><a href="https://wa.me/22241176023?text=Salam%20Vera%20Luxe%20250ml" class="btn-card" style="background:#0f2e1c">COMMANDER - LUXE</a>
+<div class="similar"><strong style="font-family:'Playfair Display'">Produits similaires qui subliment</strong><br><small>Complétez votre rituel luxe</small><div class="similar-grid"><img src="vera_dropper.jpg"><img src="vera500.jpg"><img src="vera_trio.jpg"></div></div>
+</div>
+
+<div class="card gold reveal" data-cat="500ml"><img src="vera500.jpg"><h3>500ml - Format Famille Luxe</h3><div class="desc">ALOE VERA • SÉRUM D'EXCEPTION • 16.90 fl oz<br>Rituel Famille - 100% Naturel & Raffiné</div><div class="prix">200 <small>MRU</small></div><a href="https://wa.me/22241176023?text=Salam%20Vera%20Luxe%20500ml" class="btn-card" style="background:linear-gradient(135deg,#c9a227,#e2c86a);color:#0f2e1c">COMMANDER - LUXE OR</a></div>
+
+<div class="panier-bar reveal">
+<strong style="font-family:'Playfair Display';font-size:16px">Votre Rituel Luxe (1)</strong><br><small>Plus que 150 MRU pour livraison offerte & coffret luxe offert</small>
+<div class="progress"><span></span></div>
+<strong style="font-size:12px">Ces élixirs sont faits pour vous</strong>
+<div class="similar-grid"><img src="vera_dropper.jpg"><img src="vera_hero.jpg"><img src="vera500.jpg"></div>
+</div>
+
+<div class="pack-section reveal"><h2>🔥 OFFRES PACK LUXE 🔥</h2><div class="pack"><div style="text-align:left"><b>Pack 3x 250ml - Rituel Complet</b><br><span style="font-size:11px;color:#a0c0a0">Le plus demandé - Économie Luxe</span></div><div style="text-align:right"><div style="text-decoration:line-through;color:#8ab08a;font-size:12px">450 MRU</div><div style="color:#d4c06a;font-weight:900;font-size:18px">350 MRU</div></div></div><div class="pack"><div style="text-align:left"><b>Pack Découverte 3x 100ml</b></div><div><div style="text-decoration:line-through;color:#8ab08a;font-size:12px">300</div><div style="color:#d4c06a;font-weight:900">250 MRU</div></div></div><a href="https://wa.me/22241176023?text=Salam%20Pack%20Luxe" class="btn-card" style="background:#d4c06a;color:#0f2e1c;margin-top:16px">COMMANDER PACK LUXE 📦</a></div>
+
+<div class="pay-title reveal" style="font-family:'Playfair Display';font-size:26px">Paiement Sécurisé</div>
+<div class="pay-box reveal"><div style="display:flex;align-items:center;gap:12px;font-weight:700"><img src="sedad.jpg" style="width:50px">Sedad</div><div style="font-weight:900;color:#0f2e1c">36406634</div></div>
+<div class="pay-box reveal"><div style="display:flex;align-items:center;gap:12px;font-weight:700"><img src="bankily.jpg" style="width:50px">Bankily</div><div style="font-weight:900;color:#0f2e1c">41176023</div></div>
+<div class="pay-box reveal"><div style="display:flex;align-items:center;gap:12px;font-weight:700"><img src="masrvi.jpg" style="width:50px">Masrvi</div><div style="font-weight:900;color:#0f2e1c">41176023</div></div>
+
+<div class="insta reveal"><strong style="font-family:'Playfair Display';font-size:20px">Retrouvez-nous sur Instagram</strong><br><small style="letter-spacing:2px;color:#8aa88a">VERA_COSMI_OFFICIEL - L'ART DU NATUREL</small><div class="insta-grid"><img src="vera_hero.jpg"><img src="vera_dropper.jpg"><img src="vera500.jpg"><img src="vera_trio.jpg"><img src="vera_hero.jpg"><img src="vera500.jpg"></div><p style="margin-top:14px;font-size:10px;color:#aaa;letter-spacing:1px">RELANCE PANIER ABANDONNÉ : "VOTRE RITUEL LUXE VOUS ATTEND"</p></div>
+</div>
+
+<div class="cta"><h2 style="font-family:'Playfair Display';font-size:32px">Commande Luxe Maintenant</h2><p style="margin:10px 0;color:#a0c0a0;letter-spacing:2px">LIVRAISON NOUAKCHOTT - ÉDITION LUXE</p><a href="https://wa.me/22241176023" class="wa-big">💬 WhatsApp Luxe: 41176023</a><p style="margin-top:15px;color:#6aa86a;letter-spacing:3px;font-size:11px">VERA COSMIQUE • LUXE • NATUREL • RAFFINÉ</p></div>
+
+<script>
+function filterCat(cat,el){document.querySelectorAll('.f').forEach(f=>f.classList.remove('active'));el.classList.add('active');document.querySelectorAll('.card').forEach(c=>{if(cat==='all')c.style.display='block';else c.style.display=c.dataset.cat.includes(cat)?'block':'none';});}
+function search(){let q=document.getElementById('q').value.toLowerCase();document.querySelectorAll('.card').forEach(c=>{c.style.display=c.innerText.toLowerCase().includes(q)?'block':'none';});}
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('active');});},{threshold:0.1});document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
+</script>
+</body>
+  </html>
