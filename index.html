@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VERA COSMI - Aloe Vera Serum</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f5f9f5;color:#222}
+header{background:white;padding:10px 15px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,0.06);position:sticky;top:0;z-index:100;gap:10px}
+.logo{font-weight:900;color:#14452a;line-height:1;font-size:18px}
+.logo small{font-size:11px;color:#6aa86a;letter-spacing:1px}
+.search{flex:1;display:flex;border:1px solid #d6e9d6;border-radius:25px;overflow:hidden;background:#f8fdf8;max-width:300px}
+.search input{flex:1;border:none;padding:9px 12px;outline:none;background:transparent;font-size:13px}
+.search button{border:none;background:#14452a;color:white;padding:0 12px;cursor:pointer}
+.btn-top{background:#25D366;color:white;padding:10px 18px;border-radius:30px;text-decoration:none;font-weight:900;font-size:14px;white-space:nowrap}
+.hero{text-align:center;padding:25px 15px 15px;background:#eef5ee}
+.hero h1{color:#14452a;font-size:26px;font-weight:900;line-height:1.2}
+.hero p{color:#555;margin:8px 0 15px}
+.hero img{width:100%;max-width:380px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,0.12)}
+.hero .size{color:#14452a;font-weight:800;margin-top:12px;font-size:15px}
+.filters{display:flex;gap:8px;padding:12px 15px;overflow:auto;background:white;border-bottom:1px solid #e8f0e8}
+.f{border:1px solid #d6e9d6;padding:7px 14px;border-radius:20px;font-size:12px;white-space:nowrap;background:white;cursor:pointer;font-weight:700;color:#14452a}
+.f.active{background:#14452a;color:white;border-color:#14452a}
+.container{max-width:500px;margin:0 auto;padding:20px 15px;background:white}
+.title{color:#14452a;text-align:center;font-size:22px;font-weight:900;margin:10px 0 18px}
+.card{border:2px solid #d6e9d6;border-radius:18px;padding:14px;margin:18px 0;background:white;text-align:center;overflow:hidden;transition:0.2s}
+.card img{width:100%;border-radius:12px;object-fit:contain;background:#fcfdfc;max-height:460px}
+.card h3{font-size:18px;margin:12px 0 4px;color:#111}
+.card .desc{color:#6b8a6b;font-size:12px;margin-bottom:8px;line-height:1.4}
+.prix{font-size:34px;font-weight:900;color:#14452a;margin:10px 0}
+.btn-card{display:block;padding:14px;border-radius:30px;text-decoration:none;font-weight:900;color:white;margin-top:10px;font-size:16px}
+.best{border-color:#14452a;background:#f0f7f0;position:relative;margin-top:30px}
+.badge{position:absolute;top:-13px;right:16px;background:#14452a;color:white;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:900}
+.gold{border-color:#c9a227;border-width:2.5px}
+.similar{background:#f8fdf8;border:1px dashed #c9e2c9;border-radius:15px;padding:14px;margin:20px 0}
+.similar-grid{display:flex;gap:8px;overflow:auto;margin-top:10px}
+.similar-grid img{width:90px;height:90px;border-radius:12px;object-fit:contain;background:white;border:1px solid #e0e0e0}
+.panier-bar{background:white;border:1px solid #d6e9d6;border-radius:15px;padding:14px;margin:20px 0}
+.progress{height:7px;background:#d6e9d6;border-radius:10px;overflow:hidden;margin:10px 0}
+.progress span{display:block;width:60%;height:100%;background:#14452a}
+.pack-section{background:#0f2e1c;border-radius:18px;padding:18px;margin:30px 0;color:white;text-align:center}
+.pack-section h2{color:#d4c06a;margin-bottom:14px}
+.pack{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.08);padding:12px 14px;border-radius:12px;margin:10px 0;border:1px solid rgba(212,192,106,0.2)}
+.pay-title{color:#14452a;text-align:center;font-size:22px;font-weight:900;margin:30px 0 15px}
+.pay-box{display:flex;justify-content:space-between;align-items:center;border:2px solid #e5e5e5;border-radius:14px;padding:12px 16px;margin:12px 0;background:white}
+.pay-left{display:flex;align-items:center;gap:12px;font-weight:800}
+.pay-left img{width:60px;height:42px;object-fit:contain}
+.pay-num{font-weight:900;color:#14452a;font-size:18px}
+.insta{background:#fff;padding:22px;text-align:center;border-top:1px solid #e8f0e8;margin-top:20px}
+.insta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.insta-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px}
+.cta{background:#0a2214;color:white;text-align:center;padding:32px 20px}
+.wa-big{background:#25D366;color:white;padding:16px 32px;border-radius:50px;text-decoration:none;font-weight:900;display:inline-block;margin:12px 0;font-size:18px}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">VERA<br>COSMI<br><small>ALOE VERA</small></div>
+<div class="search"><input id="q" placeholder="Rechercher 250ml..." onkeyup="search()"><button>🔍</button></div>
+<a href="https://wa.me/22241176023" class="btn-top">41176023</a>
+</header>
+
+<div class="filters">
+<div class="f active" onclick="filterCat('all',this)">Tous</div>
+<div class="f" onclick="filterCat('100ml',this)">100ml</div>
+<div class="f" onclick="filterCat('250ml',this)">250ml</div>
+<div class="f" onclick="filterCat('500ml',this)">500ml</div>
+<div class="f" onclick="filterCat('pack',this)">Pack</div>
+</div>
+
+<div class="hero">
+<h1>VERA COSMI<br>ALOE VERA SERUM</h1>
+<p>Huile Naturelle • Hydratant & Nourrissant</p>
+<img src="vera_hero.jpg">
+<div class="size">250ml • 8.45 fl oz & 100ml • 3.38 fl oz</div>
+</div>
+
+<div class="container">
+<div class="title">Nos Tailles & Prix</div>
+
+<div class="card" data-cat="pack"><img src="vera_trio.jpg"><h3>Collection Complète</h3><div class="desc">ALOE VERA SERUM CHEVEUX - 3 Formats</div><div style="font-size:14px;color:#14452a;font-weight:700">100ml=100MRU • 250ml=150MRU • 500ml=200MRU</div></div>
+
+<div class="card" data-cat="100ml"><img src="vera_dropper.jpg"><h3>100ml - Huile Naturelle</h3><div class="desc">SÉRUM CAPILLAIRE • 100ML / 3.38 FL OZ<br>NATUREL • HYDRATANT & NOURRISSANT</div><div class="prix">100 MRU</div><a href="https://wa.me/22241176023?text=Salam%20je%20veux%20100ml" class="btn-card" style="background:#14452a">Commander 100ml</a></div>
+
+<div class="card best" data-cat="250ml"><div class="badge">⭐ BEST SELLER</div><img src="vera_hero.jpg"><h3>250ml - Le Plus Vendu</h3><div class="desc">Sérum Cheveux • Nourish & Repair</div><div class="prix">150 MRU</div><a href="https://wa.me/22241176023?text=Salam%20je%20veux%20250ml" class="btn-card" style="background:#14452a">Commander 250ml</a>
+<div class="similar"><strong>Produits similaires</strong><br><small>Pour orienter vers le bon produit</small><div class="similar-grid"><img src="vera_dropper.jpg"><img src="vera500.jpg"><img src="vera_trio.jpg"></div></div>
+</div>
+
+<div class="card gold" data-cat="500ml"><img src="vera500.jpg"><h3>500ml - Format Famille</h3><div class="desc">ALOE VERA • 500ml • 16.90 fl oz - 100% Naturel</div><div class="prix">200 MRU</div><a href="https://wa.me/22241176023?text=Salam%20je%20veux%20500ml" class="btn-card" style="background:#c9a227;color:#0a2214">Commander 500ml</a></div>
+
+<div class="panier-bar">
+<strong>Mon panier (1) - Barre de progression livraison gratuite</strong><br><small>Plus que 150 MRU pour livraison offerte Nouakchott !</small>
+<div class="progress"><span></span></div>
+<strong style="font-size:13px">Ces produits sont faits pour vous - Produits complémentaires panier</strong>
+<div class="similar-grid"><img src="vera_dropper.jpg"><img src="vera_hero.jpg"><img src="vera500.jpg"></div>
+<small style="color:#6b8a6b">Pour augmenter ton panier moyen 💰</small>
+</div>
+
+<div class="pack-section"><h2>🔥 OFFRES PACK 🔥</h2><div class="pack"><div><b>Pack 3x 250ml</b><br><span style="font-size:12px;color:#a0c0a0">Le plus demandé</span></div><div><div class="old">450 MRU</div><div class="new">350 MRU</div></div></div><div class="pack"><div><b>Pack 3x 100ml</b></div><div><div class="old">300 MRU</div><div class="new">250 MRU</div></div></div><div class="pack"><div><b>Pack 2x 500ml</b></div><div><div class="old">400 MRU</div><div class="new">300 MRU</div></div></div><a href="https://wa.me/22241176023?text=Salam%20Pack" class="btn-card" style="background:#d4c06a;color:#0a2214">Commander un Pack 📦</a></div>
+
+<div class="pay-title">PAIEMENT PAR NUMÉRO</div>
+<div class="pay-box"><div class="pay-left"><img src="sedad.jpg">Sedad</div><div class="pay-num">36406634</div></div>
+<div class="pay-box"><div class="pay-left"><img src="bankily.jpg">Bankily</div><div class="pay-num">41176023</div></div>
+<div class="pay-box"><div class="pay-left"><img src="masrvi.jpg">Masrvi</div><div class="pay-num">41176023</div></div>
+
+<div class="insta">
+<strong>Retrouvez-nous sur Instagram - @vera_cosmi</strong><br><small>Afficher tes derniers posts pour inciter ton audience à te suivre</small>
+<div class="insta-grid"><img src="vera_hero.jpg"><img src="vera_dropper.jpg"><img src="vera500.jpg"><img src="vera_trio.jpg"><img src="vera_hero.jpg"><img src="vera500.jpg"></div>
+<p style="margin-top:12px;font-size:11px;color:#888">Système de relance email panier abandonné activé : "VOTRE PANIER VOUS ATTEND" + Email après 1h</p>
+</div>
+
+</div>
+<div class="cta"><h2>Commande Maintenant</h2><p style="margin:10px 0;color:#a0c0a0">Livraison Nouakchott</p><a href="https://wa.me/22241176023" class="wa-big">💬 WhatsApp: 41176023</a><p style="margin-top:15px;color:#6aa86a">vera_cosmi_officiel</p></div>
+
+<script>
+function filterCat(cat,el){
+document.querySelectorAll('.f').forEach(f=>f.classList.remove('active'));el.classList.add('active');
+document.querySelectorAll('.card').forEach(c=>{
+if(cat==='all') c.style.display='block'; else c.style.display=c.dataset.cat.includes(cat)?'block':'none';
+});
+}
+function search(){
+let q=document.getElementById('q').value.toLowerCase();
+document.querySelectorAll('.card').forEach(c=>{
+c.style.display=c.innerText.toLowerCase().includes(q)?'block':'none';
+});
+}
+</script>
+</body>
+</html>
